@@ -48,6 +48,10 @@ namespace Fatih.Data.Context
             modelBuilder.Entity<User>().HasOne<UserAddress>(u => u.UserAddress)
                 .WithOne(ua => ua.User).HasForeignKey<UserAddress>(ua => ua.UserAddressId);
 
+            //one to many 
+            modelBuilder.Entity<Product>().HasMany(p => p.ProductComments)
+                 .WithOne(p => p.Product);
+
         }
 
 
