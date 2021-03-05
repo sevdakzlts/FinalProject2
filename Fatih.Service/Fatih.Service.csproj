@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Fatih.Core\FinalProject.Core.csproj" />
+    <ProjectReference Include="..\Fatih.Data\Fatih.Data.csproj" />
+  </ItemGroup>
+
 </Project>

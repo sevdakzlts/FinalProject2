@@ -8,7 +8,7 @@ namespace FinalProject.Core.Repositories
 
         // bu sınıfa özel metodları yaz .
 
-        Task DeleteByIdAsync(int productId);
+        void DeleteById(int productId);
 
     }
 }

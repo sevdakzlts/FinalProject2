@@ -1,4 +1,10 @@
 using Fatih.Data.Context;
+using Fatih.Data.Repositories;
+using Fatih.Data.UnitOfWorks;
+using Fatih.Service.Service;
+using FinalProject.Core.Repositories;
+using FinalProject.Core.Services;
+using FinalProject.Core.UnitOfWorks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -35,6 +41,12 @@ namespace Fatih.WebAPI
                     o.MigrationsAssembly("Fatih.Data");
                 });
             });
+
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped(typeof(IService<>), typeof(Service<>));
+            
+            services.AddScoped<IProductService,ProductService>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Fatih.Core\FinalProject.Core.csproj" />
     <ProjectReference Include="..\Fatih.Data\Fatih.Data.csproj" />
+    <ProjectReference Include="..\Fatih.Service\Fatih.Service.csproj" />
   </ItemGroup>
 
 

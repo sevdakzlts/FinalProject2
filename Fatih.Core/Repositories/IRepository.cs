@@ -15,10 +15,10 @@ namespace FinalProject.Core.Repositories
         Task AddAsync(TEntity entity);
         Task AddRangeAsync(ICollection<TEntity> entities);
 
-        Task<TEntity> UpdateAsync(TEntity entity);
+        TEntity Update(TEntity entity);
 
-        void DeleteAsync(TEntity entity);
+        void Delete(TEntity entity);
 
-        void DeleteRangeAsync(ICollection<TEntity> entities);
+        void DeleteRange(ICollection<TEntity> entities);
     }
 }

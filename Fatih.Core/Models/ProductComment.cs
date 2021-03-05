@@ -1,7 +1,4 @@
 ﻿using Fatih.Core.Models.Base;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Fatih.Core.Models
 {
@@ -9,6 +6,7 @@ namespace Fatih.Core.Models
     {
 
         //product
+        
         public virtual Product Product { get; set; }
     }
 }

@@ -9,7 +9,7 @@ namespace FinalProject.Core.Services
     public interface IProductService:IService<Product>
     {
 
-        Task DeleteByIdAsync(int productId);
+        void DeleteById(int productId);
 
 
     }
