@@ -41,12 +41,12 @@ namespace Fatih.Data.Repositories
             _dbSet.RemoveRange(entities);
         }
 
-        public  async Task<ICollection<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> filter = null)
+        public virtual  async Task<ICollection<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> filter = null,bool eagerLoad = false)
         {
             return await (filter == null ? _dbSet.ToListAsync() : _dbSet.Where(filter).ToListAsync());
         }
 
-        public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter)
+        public virtual async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter, bool eagerLoad = false)
         {
             //?
             return await _dbSet.FindAsync(filter);

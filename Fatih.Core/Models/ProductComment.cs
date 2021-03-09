@@ -1,4 +1,5 @@
-﻿using Fatih.Core.Models.Base;
+﻿using System.Text.Json.Serialization;
+using Fatih.Core.Models.Base;
 
 namespace Fatih.Core.Models
 {
@@ -7,6 +8,7 @@ namespace Fatih.Core.Models
 
         //product
         public int ProductId { get; set; }
+        [JsonIgnore]
         public virtual Product Product { get; set; }
     }
 }

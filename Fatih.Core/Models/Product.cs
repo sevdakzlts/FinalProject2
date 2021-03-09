@@ -11,6 +11,7 @@ namespace Fatih.Core.Models
         public string Image { get; set; }
 
         //category 
+
         public virtual Category Category { get; set; }
 
         //comments 

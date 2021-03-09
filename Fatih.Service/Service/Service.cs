@@ -3,6 +3,7 @@ using FinalProject.Core.Services;
 using FinalProject.Core.UnitOfWorks;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
@@ -17,6 +18,9 @@ namespace Fatih.Service.Service
             _unitOfWork = unitOfWork;
             _repository = repository;
         }
+
+    
+
         public async Task AddAsync(TEntity entity)
         {
              await _repository.AddAsync(entity);
@@ -41,14 +45,14 @@ namespace Fatih.Service.Service
             _unitOfWork.Commit();
         }
 
-        public async Task<ICollection<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> filter = null)
+        public async Task<ICollection<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> filter = null, bool eagerLoad = false)
         {
-            return await _repository.GetAllAsync(filter);
+            return await _repository.GetAllAsync(filter, eagerLoad);
         }
 
-        public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter)
+        public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter, bool eagerLoad = false)
         {
-            return await _repository.GetAsync(filter);
+            return await _repository.GetAsync(filter, eagerLoad);
         }
 
         public TEntity Update(TEntity entity)

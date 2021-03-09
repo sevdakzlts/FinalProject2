@@ -14,10 +14,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+
 using System.Threading.Tasks;
+using Fatih.Core.Models;
+
 
 namespace Fatih.WebAPI
 {
@@ -42,8 +42,8 @@ namespace Fatih.WebAPI
                 });
             });
 
-            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-            services.AddScoped(typeof(IService<>), typeof(Service<>));
+            services.AddScoped(typeof(IRepository<Product>), typeof(ProductRepository));
+            services.AddScoped(typeof(IService<Product>), typeof(ProductService));
             
             services.AddScoped<IProductService,ProductService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
