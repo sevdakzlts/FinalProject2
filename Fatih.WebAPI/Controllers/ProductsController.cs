@@ -18,13 +18,11 @@ namespace Fatih.WebAPI.Controllers
             _productService = productService;
         }
 
-        [HttpGet(Name =nameof(Get))]
-        public async Task<IActionResult> Get()
+        [HttpGet]
+        public async Task<IActionResult> GetList()
         {
-            var res = await _productService.GetAllAsync();
+            var res = await _productService.GetAll();// await _productService.GetAllAsync();
             return  Ok(res);
         }
-
-
     }
 }
